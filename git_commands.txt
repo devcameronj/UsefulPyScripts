@@ -1,0 +1,91 @@
+#################################################################################
+check branches:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git branch -a
+#################################################################################
+
+#################################################################################
+check commits:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git log
+#################################################################################
+
+#################################################################################
+quit out of check branches/commits screen:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+press "q"
+#################################################################################
+
+#################################################################################
+checkout new branch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git checkout <my-feature>
+#################################################################################
+
+#################################################################################
+checkout new branch and move into it:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git checkout -b <my-feature>
+#################################################################################
+
+#################################################################################
+branch off of a branch (NOT head) and move into it:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git checkout -b <my-feature> <localBranchName>
+#################################################################################
+
+#################################################################################
+push new branch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git push --set-upstream origin <localBranchName>
+#################################################################################
+
+#################################################################################
+rollback commit:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git reset --hard <commit SHA>
+#################################################################################
+
+#################################################################################
+delete branch locally:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git branch -d <localBranchName>
+#################################################################################
+
+#################################################################################
+delete branch remotely:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git push origin --delete <remoteBranchName>
+#################################################################################
+
+#################################################################################
+delete item from git tracking, then commit so it's committed as deleted in remote:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git rm --cached <file.ext>
+git add .
+git commit -m "removed <file.ext>"
+#################################################################################
+
+#################################################################################
+pull a remote branch:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+git pull <https://github.com/user/repo.git>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you need to get changes into the current branch from another 
+branch instead of its remote tracked branch, use pull:
+    --rebase: after fetching the changes from a remote branch, 
+                GoLand will rebase local unpushed changes onto the fetched changes.
+
+    --ff-only: the merge will be resolved only if it is possible to fast-forward.
+
+    --no-ff: a merge commit will be created in all cases, even if the merge could 
+                be resolved as a fast-forward.
+
+    --squash: a single commit with all pulled changes will be created on top of the
+                current branch.
+
+    --no-commit: a merge will be performed, but a merge commit will not be created 
+                so that you can inspect the result of the merge before committing.
+
+#################################################################################
